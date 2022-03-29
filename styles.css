@@ -2,17 +2,29 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+/* 
 :root {
     --hue-neutral: 200;
     --hue-wrong: red;
     --hue-correct: green;
+} */
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.neutral {
+    background-color: aqua;
 }
 
 /* body styles */
 
 body {
-    --hue: var(--hue-neutral);
+    /* --hue: var(--hue-neutral); */
     padding: 0;
     margin: 0;
     display: flex;
@@ -20,23 +32,23 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--hue), 100%, 20%);
+    /* background-color: hsl(var(--hue), 100%, 20%); */
 }
 
-body.correct {
+/* body.correct {
     --hue: var(--hue-correct);
 }
 
 body.wrong {
     --hue: var(--hue-wrong);
-}
+} */
 
 /* container styles */
 
-.container {
+#container {
     width: 900px;
     max-width: 80%;
-    background-color: rgb(139, 38, 38);
+    /* background-color: rgb(139, 38, 38); */
     border-radius: 5px;
     padding: 15px;
     box-shadow: 0 0 15px 2px;
@@ -52,9 +64,9 @@ body.wrong {
 }
 
 .btn {
-    --hue: var(--hue-neutral);
-    border: 1px solid hsl(var(--hue), 100%, 30%);
-    background-color: hsl(var(--hue), 100%, 50%);
+    /* --hue: var(--hue-neutral); */
+    /* border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%); */
     border-radius: 5px;
     padding: 10px 15px;
     color: rgb(65, 26, 26);
@@ -65,13 +77,13 @@ body.wrong {
     border-color: rgb(15, 7, 7);
 }
 
-.btn.correct {
+/* .btn.correct {
     --hue: var(--hue-correct);
 }
 
 .btn.wrong {
     --hue: var(--hue-wrong);
-}
+} */
 
 .start-btn, .next-btn {
     font-size: 2rem;

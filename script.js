@@ -1,6 +1,7 @@
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
+const container = document.getElementById('container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
@@ -8,6 +9,8 @@ let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
+    container.removeAttribute('class')
+    container.setAttribute('class', 'neutral')
     currentQuestionIndex++
     setNextQuestion()
 })
@@ -50,6 +53,13 @@ function resetState() {
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
+  if (correct) {
+    container.removeAttribute('class')
+    container.setAttribute('class', 'green')
+  } else {
+      container.removeAttribute('class')
+      container.setAttribute('class', 'red')
+  }
   setStatusClass(document.body, correct)
   Array.from(answerButtonsElement.children).forEach(button => {
       setStatusClass(button, button.dataset.correct)
@@ -81,8 +91,8 @@ const questions = [
     {
         question: 'Is JavaScript the same as Java?',
         answers: [
-            {text: 'yes', correct: true},
-            {text: 'no', correct: false}
+            {text: 'yes', correct: false},
+            {text: 'no', correct: true}
         ]
     },
     {
